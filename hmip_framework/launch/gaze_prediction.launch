@@ -15,20 +15,22 @@
     <param name="camera_info_url" value="file://$(find srabot_launch)/config/calibration/usb_camera_calibration_1920.yaml"/>    
   </node>
 
-
-  <node name="gaze_tracker" pkg="srabot_perception" type="eyetrack.py" output="screen" >
+  <!-- TRACKERS -->
+  <node name="gaze_tracker" pkg="hmip_framework" type="eyetrack.py" output="screen" >
 
   </node>
 
-  <node name="gaze_predict" pkg="srabot_perception" type="predict_gaze.py" output="screen" >
-      <rosparam command="load" file="$(find srabot_perception)/config/object_locations_maleen.yaml" />
+    <!-- PREDICTORS -->
+  <node name="gaze_predict" pkg="hmip_framework" type="predict_gaze.py" output="screen" >
+      <rosparam command="load" file="$(find hmip_framework)/config/object_locations_maleen.yaml" />
       <param name="gaze_hit_threshold" value="0.995"/>
   </node>
 
 
   <node if="$(arg image_view)" name="image_view" pkg="image_view" type="image_view"
         respawn="false" output="screen">
-    <remap from="image" to="/eyeface/eye_image"/>
+    <remap from="image" to="/gaze_tracker/image"/>
     <param name="autosize" value="true" />
   </node>
+
 </launch>

@@ -8,10 +8,8 @@ import os, sys
 import numpy as np
 from geometry_msgs.msg import Vector3Stamped, Pose, Point
 from sensor_msgs.msg import JointState
-from srabot_msgs.msg import Prediction
+from prediction_msgs.msg import Prediction
 from std_msgs.msg import String
-from srabot_msgs.msg import *
-from srabot_msgs.srv import *
 from scipy.stats import halfnorm
 from trajectory_msgs.msg import JointTrajectoryPoint
 from threading import Lock
@@ -19,46 +17,6 @@ from tf.transformations import quaternion_from_euler
 
 UPDATE_RATE = 30 # Hz
 MINIMAL_PREDICTION_TIME = float(0.5) # seconds
-APPROACH_DISTANCE = 0.4 # meters
-    
-attention_perception_ = None
-
-def ServiceHandler(req):
-    
-    res = SrabotPerceptionResponse()
-   
-    try:
-        if req.perception_inst == SrabotPerceptionRequest.OBSERVE:
-            
-            rospy.loginfo('OBJECT')
-            res.success = True
-  
-        elif req.perception_inst == SrabotPerceptionRequest.OBJECT:
-
-            rospy.loginfo('OBJECT')
-            res.goal, res.success = attention_perception_.get_attention_obj()
-            
-        elif req.perception_inst == SrabotPerceptionRequest.APPROACH:
-
-            rospy.loginfo('APPROACH')
-            res.goal, res.success =  attention_perception_.get_attention_obj()
-
-        elif req.perception_inst == SrabotPerceptionRequest.IMAGE:
-
-            rospy.loginfo('IMAGE')
-
-            res.success = True
-        else:
-
-            rospy.logerr('Unknown service request ' + str(req.perception_inst))
-            res.success = False    
-
-    except Exception as e:
-          rospy.logerr('Execption occred')
-          print(e)
-          res.success = False
-
-    return res
 
 # Define the attention_perception class
 class attention_perception:
@@ -124,68 +82,7 @@ class attention_perception:
     def __del__(self):
         print('Shutting down the hand_tracker object')
 
-    #get attention object
-    def get_attention_obj(self):
-        
-        #start accumulating predictions
-        
-        self.final_prediction_list.clear()
-        self.start_accumulating_predictions = True
-        
-        self.start_time = rospy.get_time()
-
-        print('accumulating predictions')
-
-        #wait until stop prediction has stopped        
-        while self.start_accumulating_predictions and rospy.get_time() - self.start_time  < self.timeout_threshold:   
-            time.sleep(0.1) 
-        
-        self.start_accumulating_predictions = False
-        
-        print('prediction complete ' + str(len(self.final_prediction_list)))
-
-        # target_pose = Pose()
-        target_goal = JointState()
-        
-        if len(self.final_prediction_list) == 0:
-            print('Error no predictions accumulated')
-    
-        else:
-            best_index_list = []
-            for prediction in self.final_prediction_list:
-                best_index_list.append(prediction.best)
-            
-            
-            #find index with maximum occurance
-            best_index = max(set(best_index_list), key = best_index_list.count)     
-
-            #cound how many best_index are in best_index_list
-            count = best_index_list.count(best_index)
-            print('best index count ' + str(count)+ ' out of'+ str(len(best_index_list)))
-
-            pose = self.object_data[best_index]['pose']
-            goal = self.object_data[best_index]['goal']
-            target_label = self.object_data[best_index]['id']
-            
-            if len(goal) == 6: 
-                target_goal.position = goal       
-                # target_pose.position.x = pose[0]
-                # target_pose.position.y = pose[1]
-                # target_pose.position.z = pose[2]
-                # q = quaternion_from_euler(pose[3], pose[4], pose[5])
-                # target_pose.orientation.x = q[0]
-                # target_pose.orientation.y = q[1]
-                # target_pose.orientation.z = q[2]
-                # target_pose.orientation.w = q[3]
-                    
-                print(target_goal)
-                print(target_label)               
-                print('best prediction ' + str(best_index) + ' ' + target_label)
-                
-                return target_goal, True
-        
-        return target_goal, False
-        
+    #hand trajectory callback to reset gaze counts
     def hand_track_cb(self, handtraj):
       with self.eye_predict_lock:
         
@@ -252,7 +149,6 @@ class attention_perception:
             self.gaze_prediction.best_label = self.object_data[best_index]['id']
             
 
-              
     #update prediction based on hand and gaze prediction
     def prediction_update(self, event):
     
@@ -338,10 +234,6 @@ class attention_perception:
 if __name__ == '__main__':
 
     attention_perception_ = attention_perception()
-
-    # Start the service
-    ai_srv = rospy.Service('~request', SrabotPerception, ServiceHandler)
-    print("Service Ready.")
     
     rospy.spin()
     print ('attention_perception Node Exit()!')

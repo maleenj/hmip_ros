@@ -11,9 +11,12 @@ import numpy as np
 from srabot_msgs.msg import Prediction
 from trajectory_msgs.msg import JointTrajectoryPoint
 from decimal import Decimal
-import hand_tracker.vf3D_class as vf3D
-import hand_tracker.dynamic_target as dt
-import hand_tracker.vf_recognize as vr
+from include import vf3D_class as vf3D
+from include import dynamic_target as dt
+from include import vf_recognize as vr
+#import hand_tracker.vf3D_class as vf3D
+#import hand_tracker.dynamic_target as dt
+#import hand_tracker.vf_recognize as vr
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
