@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from helpers import relative, relativeT
+from hand_gaze_trackers.helpers import relative, relativeT
 import pandas as pd
 from pathlib import Path 
 
