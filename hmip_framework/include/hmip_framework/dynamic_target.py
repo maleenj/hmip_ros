@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
-import hand_tracker.vf3D_class as vf3D
+from hmip_framework import vf3D_class as vf3D
 import random
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.animation import FuncAnimation

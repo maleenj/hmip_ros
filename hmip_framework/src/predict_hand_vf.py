@@ -7,16 +7,13 @@ import time
 import os, sys
 import cv2 as cv 
 import numpy as np
-# from geometry_msgs.msg import Vector3Stamped
+from geometry_msgs.msg import Vector3Stamped
 from srabot_msgs.msg import Prediction
 from trajectory_msgs.msg import JointTrajectoryPoint
 from decimal import Decimal
-from include import vf3D_class as vf3D
-from include import dynamic_target as dt
-from include import vf_recognize as vr
-#import hand_tracker.vf3D_class as vf3D
-#import hand_tracker.dynamic_target as dt
-#import hand_tracker.vf_recognize as vr
+from hmip_framework import vf3D_class as vf3D
+from hmip_framework import dynamic_target as dt
+from hmip_framework import vf_recognize as vr
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 

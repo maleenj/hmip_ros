@@ -8,7 +8,7 @@
     <param name="intrinsic_controls/focus_automatic_continuous" value="false" />
     <param name="image_width" value="1920" />
     <param name="image_height" value="1080" />
-    <param name="pixel_format" value="mjpeg" />
+    <param name="pixel_format" value="yuv" />
     <param name="color_format" value="yuv422p" />
     <param name="camera_frame_id" value="usb_cam" />
     <param name="io_method" value="mmap"/>
@@ -17,11 +17,11 @@
 
 
   <!-- TRACKERS -->
-  <node name="hand_tracker" pkg="hmip_framework" type="handtrack.py" output="screen" />
+  <node name="hand_tracker" pkg="hand_gaze_trackers" type="handtrack.py" output="screen" />
   
   <!-- PREDICTORS -->
   <node name="predict_hand_vf" pkg="hmip_framework" type="predict_hand_vf.py" output="screen" >
-     <rosparam command="load" file="$(find hmip_framework)/config/object_locations_tile.yaml" />
+     <rosparam command="load" file="$(find hmip_framework)/config/object_locations.yaml" />
      <param name="beta" value="1"/>
      <param name="disc_param" value="0.05"/>
   </node>
