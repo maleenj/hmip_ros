@@ -8,7 +8,7 @@ import os, sys
 import cv2 as cv 
 import numpy as np
 from geometry_msgs.msg import Vector3Stamped
-from srabot_msgs.msg import Prediction
+from prediction_msgs.msg import Prediction
 from trajectory_msgs.msg import JointTrajectoryPoint
 from decimal import Decimal
 from hmip_framework import vf3D_class as vf3D

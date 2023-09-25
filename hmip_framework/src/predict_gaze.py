@@ -12,7 +12,7 @@ from sensor_msgs.msg import Image, CameraInfo
 from decimal import Decimal
 from pathlib import Path 
 from trajectory_msgs.msg import JointTrajectoryPoint
-from srabot_msgs.msg import Prediction
+from prediction_msgs.msg import Prediction
 
 class predict_gaze:
 

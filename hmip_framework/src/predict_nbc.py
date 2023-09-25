@@ -24,7 +24,7 @@ class attention_perception:
     # Initialize the class
     def __init__(self):
         
-        rospy.init_node('attention_perception', anonymous=True, log_level=rospy.DEBUG)	
+        rospy.init_node('predict_nbc', anonymous=True, log_level=rospy.DEBUG)	
 
         self.velocity_noise = rospy.get_param('~velocity_noise', 0.05)
         self.object_data = rospy.get_param('~object_locations', [])
