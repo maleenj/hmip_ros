@@ -23,7 +23,7 @@ Watch Video:
 
 ## Instructions and Tutorials
 
-1. Testing pipeline with dataset
+1. Testing pipeline with datasets
 2. Running pipeline 
 3. Running prediction nodes
 
