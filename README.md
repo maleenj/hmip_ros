@@ -21,7 +21,7 @@ Watch Video:
 
 4. prediction_msgs: Custom message type to handle predictions made by the hmip_framework node.
 
-## Instructions and tutorials
+## Instructions and Tutorials
 
 1. Testing pipeline with dataset
 2. Running pipeline 
