@@ -15,7 +15,7 @@ Watch Video:
 
 ## Package Descriptions
 
-More Information at: [hmip_ros](https://github.com/maleenj/hmip_ros/wiki)
+More Information at: [hmip_ros Wiki](https://github.com/maleenj/hmip_ros/wiki)
 
 1. hand_gaze_trackers: This package uses Google's Mediapipe framework to track raw hand and gaze data using vision. This package can be replaced by any other state-of-the-art method to track hand and gaze data and is not a strict pre-requisite for the HMIP framework.
 
