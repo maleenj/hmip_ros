@@ -13,15 +13,13 @@ Watch Video:
       </a>
     </div>
 
-
 ## Package Descriptions
 
-1. hand_gaze_trackers:
+1. hand_gaze_trackers: This package uses Google's Mediapipe framework to track raw hand and gaze data using vision. This package can be replaced by any other state-of-the-art method to track hand and gaze data and is not a strict pre-requisite for the HMIP framework.
 
-2. hmip_framework:
+3. hmip_framework: This package contains three nodes. The first node carries out HMIP using hand data and vector field representations. The second node carries out HMIP based on gaze data. The final node combines both these information using a Naive Bayes Classifier to provide a combined prediction.
 
-3. prediction_msgs:
-
+4. prediction_msgs: Custom message type to handle predictions made by the hmip_framework node.
 
 ## Instructions and tutorials
 
