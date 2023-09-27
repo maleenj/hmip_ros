@@ -9,7 +9,7 @@ Watch Video:
      <img 
       src="https://i.imgur.com/Ojyn8ZY.jpg" 
       alt="Video on Draft Paper" 
-      style="width:100%;">
+      style="width:75%;">
       </a>
     </div>
 
