@@ -15,6 +15,8 @@ Watch Video:
 
 ## Package Descriptions
 
+More Information at: [hmip_ros](https://github.com/maleenj/hmip_ros/wiki)
+
 1. hand_gaze_trackers: This package uses Google's Mediapipe framework to track raw hand and gaze data using vision. This package can be replaced by any other state-of-the-art method to track hand and gaze data and is not a strict pre-requisite for the HMIP framework.
 
 3. hmip_framework: This package contains three nodes. The first node carries out HMIP using hand data and vector field representations. The second node carries out HMIP based on gaze data. The final node combines both these information using a Naive Bayes Classifier to provide a combined prediction.
@@ -23,7 +25,6 @@ Watch Video:
 
 ## Instructions and Tutorials
 
-1. Testing pipeline with datasets
-2. Running pipeline in realtime
-3. Running prediction nodes
+1. [Testing pipeline with datasets] (https://github.com/maleenj/hmip_ros/wiki/1.-Testing-Pipeline-with-Datasets)
+2. [Running pipeline in realtime] (https://github.com/maleenj/hmip_ros/wiki/2.-Running-Pipeline-in-Realtime)
 
