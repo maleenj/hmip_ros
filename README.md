@@ -24,6 +24,6 @@ Watch Video:
 ## Instructions and Tutorials
 
 1. Testing pipeline with datasets
-2. Running pipeline 
+2. Running pipeline in realtime
 3. Running prediction nodes
 
