@@ -25,6 +25,6 @@ More Information at: [hmip_ros Wiki](https://github.com/maleenj/hmip_ros/wiki)
 
 ## Instructions and Tutorials
 
-1. [Testing pipeline with datasets] (https://github.com/maleenj/hmip_ros/wiki/1.-Testing-Pipeline-with-Datasets)
-2. [Running pipeline in realtime] (https://github.com/maleenj/hmip_ros/wiki/2.-Running-Pipeline-in-Realtime)
+1. [Testing pipeline with datasets](https://github.com/maleenj/hmip_ros/wiki/1.-Testing-Pipeline-with-Datasets)
+2. [Running pipeline in realtime](https://github.com/maleenj/hmip_ros/wiki/2.-Running-Pipeline-in-Realtime)
 
