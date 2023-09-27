@@ -16,6 +16,12 @@ Watch Video:
 
 ## Package Descriptions
 
+1. hand_gaze_trackers:
+
+2. hmip_framework:
+
+3. prediction_msgs:
+
 
 ## Instructions and tutorials
 
