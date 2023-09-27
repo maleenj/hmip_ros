@@ -7,7 +7,7 @@ Watch Video:
 <div align="center">
       <a href="https://youtu.be/6foeRxCCqRk?si=MTCU8gc60DLDNtvs">
      <img 
-      src="[https://i.imgur.com/Ojyn8ZY.jpg](https://i.imgur.com/R3xlUQ3.jpg)" 
+      src="https://i.imgur.com/R3xlUQ3.jpg" 
       alt="Video on Draft Paper" 
       style="width:75%;">
       </a>
