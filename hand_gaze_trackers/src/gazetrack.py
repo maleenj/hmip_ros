@@ -4,17 +4,13 @@
 import rospy
 import copy
 import time
-import os, sys
 import mediapipe as mp
 from trajectory_msgs.msg import JointTrajectoryPoint
 import cv2 as cv 
 import numpy as np
 from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge, CvBridgeError
-from decimal import Decimal
 from hand_gaze_trackers import gaze
-import pandas as pd
-from pathlib import Path 
 
 mp_face_mesh = mp.solutions.face_mesh
 

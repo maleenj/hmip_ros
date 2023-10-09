@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 # Maleen Jayasurya @ UTS-RI
-import roslib;
 import rospy
 import copy
-import time
-import os, sys
 import numpy as np
-from geometry_msgs.msg import Vector3Stamped, Pose, Point
-from sensor_msgs.msg import JointState
 from prediction_msgs.msg import Prediction
-from std_msgs.msg import String
 from scipy.stats import halfnorm
 from trajectory_msgs.msg import JointTrajectoryPoint
 from threading import Lock

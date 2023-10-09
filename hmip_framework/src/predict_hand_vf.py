@@ -1,21 +1,14 @@
 #!/usr/bin/env python
 # Maleen Jayasurya @ UTS-RI
-import roslib;
 import rospy
-import copy
-import time
-import os, sys
-import cv2 as cv 
 import numpy as np
-from geometry_msgs.msg import Vector3Stamped
 from prediction_msgs.msg import Prediction
 from trajectory_msgs.msg import JointTrajectoryPoint
 from decimal import Decimal
 from hmip_framework import vf3D_class as vf3D
 from hmip_framework import dynamic_target as dt
 from hmip_framework import vf_recognize as vr
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+
 
 # Define the predict_hand_vf class
 class predict_hand_vf:

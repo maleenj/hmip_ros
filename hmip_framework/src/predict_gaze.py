@@ -2,15 +2,7 @@
 # Maleen Jayasurya @ UTS-RI
 
 import rospy
-import copy
-import time
-import os, sys
-import mediapipe as mp
-import cv2 as cv 
 import numpy as np
-from sensor_msgs.msg import Image, CameraInfo
-from decimal import Decimal
-from pathlib import Path 
 from trajectory_msgs.msg import JointTrajectoryPoint
 from prediction_msgs.msg import Prediction
 
