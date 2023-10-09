@@ -27,14 +27,14 @@ More Information at: [hmip_ros Wiki](https://github.com/maleenj/hmip_ros/wiki)
 
 3. hmip_framework: This package contains three nodes. The first node carries out HMIP using hand data and vector field representations. The second node carries out HMIP based on gaze data. The final node combines both these information using a Naive Bayes Classifier to provide a combined prediction.
 
-Dependencies:
-*ROS Noetic
-*scipy
+      Dependencies:
+      - ROS Noetic
+      - scipy
 
 5. prediction_msgs: Custom message type to handle predictions made by the hmip_framework node.
 
-Dependencies:
-*ROS Noetic
+      Dependencies:
+      - ROS Noetic
 
 ## Instructions and Tutorials
 
