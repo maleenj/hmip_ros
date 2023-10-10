@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # Maleen Jayasurya @ UTS-RI
-import roslib
 import rospy
 import copy
 import time
-import os, sys
 import cv2 as cv 
 import numpy as np
 from sensor_msgs.msg import Image,CameraInfo
