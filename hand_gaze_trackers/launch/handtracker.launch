@@ -9,7 +9,7 @@
     <param name="image_width" value="1920" />
     <param name="image_height" value="1080" />
     <param name="pixel_format" value="yuv" />
-    <!--param name="color_format" value="yuv422p" /-->
+    <param name="color_format" value="yuv422p" />
     <param name="camera_frame_id" value="usb_cam" />
     <param name="io_method" value="mmap"/>
     <param name="camera_info_url" value="file://$(find hmip_framework)/config/calibration/usb_camera_calibration_1920.yaml"/>    
